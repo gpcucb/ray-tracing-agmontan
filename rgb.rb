@@ -1,10 +1,9 @@
+class Rgb
+  attr_accessor :r, :g, :b
 
-class rgb  
-  def initialize(red, blue, green)  
-    # Instance variables  
-    @red = red.to_f 
-    @blue = blue.to_f
-    @green = green.to_f  
-  end 
-
- end
+  def initialize(r,g,b)
+    @r = r.to_f
+    @g = g.to_f
+    @b = b.to_f
+  end
+end
