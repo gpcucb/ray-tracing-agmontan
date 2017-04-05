@@ -29,26 +29,27 @@ class Vector
   # Producto vectorial
   def vector_product(vector)
     x = (@y * vector.z) - (@z * vector.y)
-    y = (@z * vector.x) - (@x * vector.z)
+    y = -((@x * vector.z) - (@z * vector.x))
     z = (@x * vector.y) - (@y * vector.x)
     return Vector.new(x, y, z)
   end
 
   # Producto escalar
   def scalar_product(vector)
-    i = @x * vector.x
-    j = @y * vector.y
-    k = @z * vector.z
-    return (i + j + k).to_f
+    x = @x * vector.x
+    y = @y * vector.y
+    z = @z * vector.z
+    return (x + y + z).to_f
   end
 
-  #producto valor vector
-  def num_product(val)
-
-    x = (@x*val)
-    y = (@y*val)
-    z = (@z*val)
-    return Vector.new(x,y,z)
-
+  # Producto vector por número
+  def num_product(num)
+    x = @x * num
+    y = @y * num
+    z = @z * num
+    return Vector.new(x, y, z)
+  end
+  def normalize
+    Vector.new(@x/self.mod,@y/self.mod,@z/self.mod)
   end
 end
